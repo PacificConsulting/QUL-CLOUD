@@ -1,4 +1,4 @@
-codeunit 50100 "Amt In Words"
+codeunit 50000 "Amt In Words"
 {
     trigger OnRun()
     begin

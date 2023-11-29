@@ -17,7 +17,7 @@ codeunit 50003 "NAV CRM Integration"
         TotalAmount: Decimal;
         TotalGSTAmountlinewise: Decimal;
         TotalGSTPercent: Decimal;
-    //StagingPmtEntry: Record 50050;  //table does not exist
+        StagingPmtEntry: Record 50050;  //table does not exist
 
     //[Scope('Internal')]
     procedure CreateCustomer("no": Code[20]; name: Text[50]; addr: Text[50]; addr2: Text[50]; city: Text[30]; phone: Text[30]; postCode: Code[20])
@@ -77,18 +77,18 @@ codeunit 50003 "NAV CRM Integration"
     end;
 
 
-    // procedure PaymentEntryUpsert(PostingDate: Text[25]; CustomerNo: Text[20]; FolioNo: Text[20]; PaymentType: Text[20]; Amount: Text[20]; SiteID: Text[20]; Paymentcategory: Text[20])
-    // begin
-    //     StagingPmtEntry.INIT();
-    //     StagingPmtEntry."Posting Date" := PostingDate;
-    //     StagingPmtEntry."Customer No" := CustomerNo;
-    //     StagingPmtEntry."Folio No" := FolioNo;
-    //     StagingPmtEntry."Payment Type" := PaymentType;
-    //     StagingPmtEntry.Amount := Amount;
-    //     StagingPmtEntry."Site ID" := SiteID;
-    //     StagingPmtEntry."Transaction Type" := Paymentcategory;
-    //     StagingPmtEntry.INSERT();
-    // end;     //Table required
+    procedure PaymentEntryUpsert(postingdate: Text[25]; customerno: Text[20]; foliono: Text[20]; paymenttype: Text[20]; amount: Text[20]; siteiD: Text[20]; paymentcategory: Text[20])
+    begin
+        StagingPmtEntry.INIT();
+        StagingPmtEntry."Posting Date" := PostingDate;
+        StagingPmtEntry."Customer No" := CustomerNo;
+        StagingPmtEntry."Folio No" := FolioNo;
+        StagingPmtEntry."Payment Type" := PaymentType;
+        StagingPmtEntry.Amount := Amount;
+        StagingPmtEntry."Site ID" := SiteID;
+        StagingPmtEntry."Payment Category" := Paymentcategory;
+        StagingPmtEntry.INSERT();
+    end;     //Table required
 
     local procedure GetNAVSQNetAmount(SQNo: Code[20]): Decimal
     var
@@ -115,7 +115,6 @@ codeunit 50003 "NAV CRM Integration"
         SalesQuote.TotalFarmerBillAmount := totAmt;
         SalesQuote.INSERT();
     end;
-
 
     procedure CreateSalesOrderLine("docno": Code[20]; "lineno": Integer; sqtype: Option " ","G/L Account",Item,Resource,"Fixed Asset","Charge (Item)"; "itemno": Code[20]; locationcode: Code[10]; sqquantity: Decimal)
     begin

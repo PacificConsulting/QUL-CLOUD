@@ -2,7 +2,7 @@
   "id": "6ec11aeb-124e-4a2e-92dd-582f504ff656",
   "name": "QUL CLOUD",
   "publisher": "Default publisher",
-  "version": "1.0.0.0",
+  "version": "1.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -42,8 +42,7 @@
       "version": "18.3.27240.27480"
     },
     {
-      "id": "050f6146-bffd-40de-942c-d0dd510ec20f",
-      
+      "id": "050f6146-bffd-40de-942c-d0dd510ec20f",      
       "publisher": "Microsoft",
       "name": "India Reports",
       "version": "18.2.26217.26490"
@@ -53,6 +52,13 @@
       "publisher": "Microsoft",
       "name": "Fixed Asset Depreciation for India",
       "version": "18.2.26217.26490"
+    },
+    
+    {
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "22.5.59966.62013"
     },
     {
       "id": "f1d9b696-156b-4251-b542-34e549fa80e9",

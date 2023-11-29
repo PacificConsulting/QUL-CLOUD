@@ -583,7 +583,7 @@ report 50011 "PO GST"
         NoOfRows: Integer;
         NoOfRecords: Integer;
         recCust: Record 18;
-        repCheck: Codeunit 50100;
+        repCheck: Codeunit 50000;
         AmountinWords: array[5] of Text[250];
         TotalAmount: Decimal;
         recPurchLine: Record 39;
