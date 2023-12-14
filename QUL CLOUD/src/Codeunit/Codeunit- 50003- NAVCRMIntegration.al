@@ -77,7 +77,7 @@ codeunit 50003 "NAV CRM Integration"
     end;
 
 
-    procedure PaymentEntryUpsert(postingdate: Text[25]; customerno: Text[20]; foliono: Text[20]; paymenttype: Text[20]; amount: Text[20]; siteiD: Text[20]; paymentcategory: Text[20])
+    procedure PaymentEntryInsert(postingdate: Text[25]; customerno: Text[20]; foliono: Text[20]; paymenttype: Text[20]; amount: Text[20]; siteiD: Text[20]; paymentcategory: Text[20])
     begin
         StagingPmtEntry.INIT();
         StagingPmtEntry."Posting Date" := PostingDate;
